@@ -55,4 +55,8 @@ FROM album
 JOIN artist
 ON album.artist_id = artist.artist_id;
 
+SELECT * FROM artist ORDER BY name DESC LIMIT 10;
+
+SELECT * FROM artist WHERE name = '%Black';
+
 -------------------------------------

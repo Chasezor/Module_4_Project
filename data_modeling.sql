@@ -7,10 +7,10 @@ CREATE TABLE employee
     employee_id SERIAL PRIMARY KEY
 );
 
-CREATE TABLE recue
+CREATE TABLE rescue
 (
     location VARCHAR(255),
-    recue_id SERIAL PRIMARY KEY,
+    rescue_id SERIAL PRIMARY KEY,
     type VARCHAR(255),
     Found_by INT NOT NULL REFERENCES employee(employee_id),
     Time TIMESTAMP
@@ -18,10 +18,10 @@ CREATE TABLE recue
 
 CREATE TABLE animal
 (
-    type INT NOT NULL REFERENCES recue(type),
+    type INT NOT NULL REFERENCES rescue(type),
     bread VARCHAR(255),
     Weight NUMERIC,
-    animal_id INT NOT NULL REFERENCES recue(recue_id),
+    animal_id INT NOT NULL REFERENCES rescue(rescue_id),
     adopted BOOLEAN
 );
 
